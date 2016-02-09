@@ -129,15 +129,9 @@ def loss_function_of_ridge(dataset, CROSS_VALIDATION = 10):
     return np.mean(error_list)
 
 loss_of_ridge = loss_function_of_ridge(reduced_data_set)
-print reduced_data_set.shape
 
 ##comparison use the private one
-
-print x_and_y_splitter(private_set)[0].shape
-
 converter = converter_machine(training_set)
-print pd.DataFrame(converter.transform(x_and_y_splitter(private_set)[0]))
-
 
 y_hat_knn = knn(reduced_data_set, k = 3).predict(converter.transform(x_and_y_splitter(private_set)[0]))
 error_knn = evaluation_handler(x_and_y_splitter(private_set)[1],y_hat_knn)
