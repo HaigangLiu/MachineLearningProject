@@ -104,8 +104,6 @@ y_lim = []
 for k in x_lim:
     y_lim.append(loss_function_of_knn(reduced_data_set,k))
 
-print "the sum of squared residuals are %d" %(min(y_lim))
-plt.plot(x_lim,y_lim)
 
 def ridge_regressor(dataset):
     x_data, y_data = x_and_y_splitter(dataset)
